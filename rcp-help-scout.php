@@ -17,7 +17,6 @@ define( 'RCP_HELPSCOUT_PLUGIN_DIR', trailingslashit( plugin_dir_path( __FILE__ )
 class RCP_Help_Scout {
 
 	public function __construct() {
-
 		$this->init();
 
 	}
@@ -33,7 +32,6 @@ class RCP_Help_Scout {
 
 		$this->includes();
 		$this->load_textdomain();
-
 		add_action( 'rcp_misc_settings', array( $this, 'settings' ) );
 
 	}
@@ -46,7 +44,7 @@ class RCP_Help_Scout {
 	 * @return      void
 	 */
 	public function includes() {
-
+		include RCP_HELPSCOUT_PLUGIN_DIR . 'includes/class-rcp-help-scout-api.php';
 		include RCP_HELPSCOUT_PLUGIN_DIR . 'includes/class-rcp-signup.php';
 		include RCP_HELPSCOUT_PLUGIN_DIR . 'includes/class-rcp-help-scout-customer.php';
 
@@ -106,6 +104,7 @@ class RCP_Help_Scout {
 	 * @return      void
 	 */
 	public function settings( $rcp_options ) {
+		echo 23423;die;
 		?>
 		<table class="form-table">
 			<tr valign="top">
