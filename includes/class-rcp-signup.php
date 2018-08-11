@@ -55,7 +55,7 @@ class PW_RCP_Help_Scout_Signup
     {
 
         $objhelp = new PW_RCP_Help_Scout_Api();
-        $return  = $objhelp->getAccessToken('https://api.helpscout.net/v2/oauth2/token', $client_id, $client_secret);
+        $return  = $objhelp->getAccessToken('https://api.helpscout.net/v2/oauth2/token', $this->api_key, $this->secret);
         if ($return) {
             $token = $return['access_token'];
             $user  = new WP_User($user_id);
