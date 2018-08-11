@@ -104,7 +104,6 @@ class RCP_Help_Scout {
 	 * @return      void
 	 */
 	public function settings( $rcp_options ) {
-		echo 23423;die;
 		?>
 		<table class="form-table">
 			<tr valign="top">
