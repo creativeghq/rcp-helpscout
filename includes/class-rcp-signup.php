@@ -66,27 +66,13 @@ class PW_RCP_Help_Scout_Signup
                 $fields['lastname']  = $user->user_lastname;
 
                 $result = $objhelp->createCustomer($fields);
-                if (isset($result['Resource-ID'])) {
+                if (isset($result['resource-id'])) {
                     //adding email to customer
                     $emailfields['type']  = 'work';
                     $emailfields['value'] = $user->user_email;
-                    $customerid           = $result['Resource-ID'];
+                    $customerid           = $result['resource-id'];
                     $objhelp->createEmail($customerid,$emailfields);
                 }
-
-                // $customer = new \HelpScout\model\Customer();
-                // $customer->setFirstName( $user->user_firstname );
-                // $customer->setLastName( $user->user_lastname );
-
-                // // Emails: at least one email is required
-                // $emailWork = new \HelpScout\model\customer\EmailEntry();
-                // $emailWork->setValue( $user->user_email );
-                // $emailWork->setLocation( "work" );
-
-                // $customer->setEmails( array( $emailWork ) );
-
-                // $client->createCustomer( $customer );
-
             } catch (Exception $e) {
 
             }

@@ -32,8 +32,8 @@ class PW_RCP_Help_Scout_Api
             return false; // Bail early
         }
 
-        $data = json_decode($response['body'], true);
-        return $data;
+        $headers = wp_remote_retrieve_headers($response)->getAll();
+        return $headers;
     }
 
     private function request($url, $method = 'GET', $page = 1, $fields = null)
